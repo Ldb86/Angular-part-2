@@ -1,0 +1,17 @@
+<p class="text-center">user-list.component</p>
+
+<div class="d-flex flex-column justify-content-between bd-highlight mb-3">
+
+    <ol class="bg-opacity-75" *ngIf="users.length > 0; else empty">
+      
+        <li class="bg-warning mt-3" *ngFor="let user of users">
+            <app-user-single [user]="user" (removedUser)="removeUser($event)"> </app-user-single>
+        </li>
+
+    </ol>
+
+</div>
+
+<ng-template #empty>
+    <p>Nessun elemento presente!</p>
+</ng-template>

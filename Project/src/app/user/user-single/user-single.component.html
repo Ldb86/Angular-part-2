@@ -1,0 +1,7 @@
+<div class=" border m-1" [ngClass]="{'border-danger' : user.role === 'staff', 'border-info' : user.role === 'admin', 'border-success' : user.role === 'manager'}">
+
+    <img src={{user.profilePhotoUrl}}><strong>{{user.name}} {{user.surname}}</strong> {{user.age}} {{user.address?.city}}
+
+    <button class="btn-danger" (click)="removeUser(user)">Remove</button>
+
+</div>

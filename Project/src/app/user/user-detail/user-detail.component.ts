@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { IUser } from './../../user';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-detail',
@@ -7,9 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UserDetailComponent implements OnInit {
   
+  @Input() user!: IUser;
+  @Output() closeDetail = new EventEmitter()
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  closedDetail() {
+    this.closeDetail.emit();
   }
 
 }
