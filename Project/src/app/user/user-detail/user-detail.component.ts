@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class UserDetailComponent implements OnInit {
   
-  @Input() user!: IUser;
-  @Output() closeDetail = new EventEmitter()
+  @Input() user?: IUser;
+  @Output() closedDetail = new EventEmitter<IUser>();
 
 
   constructor() { }
@@ -17,8 +17,8 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  closedDetail() {
-    this.closeDetail.emit();
+  closeDetails() {
+    this.closedDetail.emit();
   }
 
 }

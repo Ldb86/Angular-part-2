@@ -10,6 +10,7 @@ export class UserSingleComponent implements OnInit {
 
   @Input() user!: IUser;
   @Output() removedUser = new EventEmitter<IUser>();
+  @Output() showedUser = new EventEmitter<IUser>();
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class UserSingleComponent implements OnInit {
 
   removeUser(user: IUser): void {
     this.removedUser.emit(user)
+  }
+
+  showUser(user: IUser):void{
+    this.showedUser.emit(user)
   }
 
 }

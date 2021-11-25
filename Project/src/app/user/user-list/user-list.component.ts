@@ -1,5 +1,5 @@
 import { Roles, Gender, IUser } from '../../user';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-list',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
+
+  @Output() showedUser = new EventEmitter<IUser>();
 
   users: IUser[] = [
     {
@@ -67,6 +69,10 @@ export class UserListComponent implements OnInit {
   removeUser(user: IUser): void{
     const i = this.users.indexOf(user);
     this.users.splice(i, 1);
+  }
+
+  showUser(user: IUser): void{
+    this.showedUser.emit(user);
   }
 
 }

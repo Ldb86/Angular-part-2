@@ -5,7 +5,7 @@
     <ol class="bg-opacity-75" *ngIf="users.length > 0; else empty">
       
         <li class="bg-warning mt-3" *ngFor="let user of users">
-            <app-user-single [user]="user" (removedUser)="removeUser($event)"> </app-user-single>
+            <app-user-single [user]="user" (removedUser)="removeUser($event)" (showedUser)="showUser(user)"> </app-user-single>
         </li>
 
     </ol>
