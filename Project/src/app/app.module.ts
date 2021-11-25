@@ -13,6 +13,7 @@ import { OrderDetailComponent } from './order/order-detail/order-detail.componen
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserSingleComponent } from './user/user-single/user-single.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserSingleComponent } from './user/user-single/user-single.component';
     OrderDetailComponent,
     UserDetailComponent,
     UserListComponent,
-    UserSingleComponent
+    UserSingleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
